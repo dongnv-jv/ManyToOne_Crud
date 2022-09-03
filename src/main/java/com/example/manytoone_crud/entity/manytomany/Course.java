@@ -2,6 +2,7 @@ package com.example.manytoone_crud.entity.manytomany;
 
 import com.example.manytoone_crud.custom.CustomCourseSerializer;
 import com.example.manytoone_crud.custom.CustomStudentSerializer;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -20,9 +21,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +31,8 @@ public class Course {
     @Column(name = "course_total")
     private int total;
     @ManyToMany(mappedBy = "listcourse", fetch = FetchType.EAGER)
+//    @JsonBackReference
+    @JsonSerialize(using = CustomCourseSerializer.class)
     private List<Student> studentList;
 
 }

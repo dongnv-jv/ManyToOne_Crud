@@ -19,6 +19,10 @@ public class StudentService {
     private ICourseRepository iCourseRepository;
 
     public List<Student> getAllStudent(){
+        System.out.println("alo1");
+        iStudentRepository.findAll();
+        System.out.println("alo1");
+
         return iStudentRepository.findAll();
     }
 

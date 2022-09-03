@@ -1,7 +1,9 @@
 package com.example.manytoone_crud.entity.manytomany;
 
+import com.example.manytoone_crud.custom.CustomCourseSerializer;
 import com.example.manytoone_crud.custom.CustomStudentSerializer;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
@@ -20,9 +22,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +35,11 @@ public class Student {
     @NotBlank
     private String name;
     @ManyToMany(fetch = FetchType.EAGER)
+//    @JsonManagedReference
     @JoinTable(name = "student_course",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id"))
+            joinColumns = @JoinColumn(name = "student_id_1",referencedColumnName = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id_1",referencedColumnName = "course_id"))
+    @JsonSerialize(using = CustomStudentSerializer.class)
     private List<Course> listcourse;
 
 }

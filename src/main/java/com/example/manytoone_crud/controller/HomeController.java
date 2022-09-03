@@ -74,4 +74,6 @@ public class HomeController {
     public ResponseEntity<?> saveStudent(@Valid @RequestBody Student student){
         return ResponseEntity.ok().body(studentService.saveStudent(student));
     }
+
+
 }
