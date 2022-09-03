@@ -1,7 +1,7 @@
-package com.example.manytoone_crud.service;
+package com.example.manytoone_crud.service.manytooneservice;
 
-import com.example.manytoone_crud.entity.City;
-import com.example.manytoone_crud.repository.ICityRepository;
+import com.example.manytoone_crud.entity.manytoone.City;
+import com.example.manytoone_crud.repository.manytoon_repository.ICityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

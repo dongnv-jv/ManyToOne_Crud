@@ -1,7 +1,5 @@
 package com.example.manytoone_crud.service.manytomanyservice;
 
-import com.example.manytoone_crud.entity.City;
-import com.example.manytoone_crud.entity.Countries;
 import com.example.manytoone_crud.entity.manytomany.Course;
 import com.example.manytoone_crud.entity.manytomany.Student;
 import com.example.manytoone_crud.repository.manytomanyrepository.ICourseRepository;

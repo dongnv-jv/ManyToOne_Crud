@@ -1,9 +1,9 @@
 package com.example.manytoone_crud.controller;
 
-import com.example.manytoone_crud.entity.City;
+import com.example.manytoone_crud.entity.manytoone.City;
 import com.example.manytoone_crud.entity.manytomany.Student;
-import com.example.manytoone_crud.service.CityService;
-import com.example.manytoone_crud.service.CountryService;
+import com.example.manytoone_crud.service.manytooneservice.CityService;
+import com.example.manytoone_crud.service.manytooneservice.CountryService;
 import com.example.manytoone_crud.service.manytomanyservice.CourseService;
 import com.example.manytoone_crud.service.manytomanyservice.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class HomeController {
     @Autowired
     private CourseService courseService;
 
-
+// Many to One Test
     @GetMapping("/hello")
     public String sayHello() {
         return "Hellooooooo";
@@ -57,7 +57,7 @@ public class HomeController {
     public ResponseEntity<?> findByIdCountry(@RequestParam("id") int id) {
         return ResponseEntity.ok().body(countryService.getCountryById(id));
     }
-    // Many to Many
+    // Many to Many Test
     @GetMapping("/getstudents")
     public ResponseEntity<?> getAllStudent() {
         return ResponseEntity.ok().body(studentService.getAllStudent());

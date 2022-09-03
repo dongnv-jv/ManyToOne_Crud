@@ -1,8 +1,8 @@
-package com.example.manytoone_crud.entity;
+package com.example.manytoone_crud.entity.manytoone;
 
+import com.example.manytoone_crud.entity.manytoone.City;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;

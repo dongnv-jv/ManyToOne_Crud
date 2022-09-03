@@ -1,4 +1,4 @@
-package com.example.manytoone_crud.entity;
+package com.example.manytoone_crud.entity.manytoone;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
