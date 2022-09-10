@@ -20,9 +20,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,9 @@ public class Course {
     private String idCourse;
     @Column(name = "course_total")
     private int total;
-    @ManyToMany(mappedBy = "listcourse", fetch = FetchType.EAGER)
-    private List<Student> studentList;
+//    @ManyToMany(mappedBy = "listcourse", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "student")
+
+    private List<Student_Course> list;
 
 }

@@ -20,9 +20,9 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,15 +30,17 @@ public class Student {
     private int id;
     @Column(name = "student_idst")
     @NotBlank
-    @Size(min=3)
+    @Size(min=3,max=10)
     private String idSt;
     @Column(name = "student_name")
     @NotBlank
     private String name;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "student_course",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id"))
-    private List<Course> listcourse;
-// Test branch develope_ManyToOne_ManyToOne
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(name = "student_course",
+//            joinColumns = @JoinColumn(name = "student_id"),
+//            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @OneToMany(mappedBy = "course")
+
+    private List<Student_Course> list;
+
 }

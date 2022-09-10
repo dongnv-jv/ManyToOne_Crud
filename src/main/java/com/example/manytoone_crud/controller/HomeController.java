@@ -66,10 +66,10 @@ public class HomeController {
     public ResponseEntity<?> getAllCourse() {
         return ResponseEntity.ok().body(courseService.getAllCourse());
     }
-    @GetMapping("/get-student-by-id-course")
-    public ResponseEntity<?> getStudentByCourseId(@RequestParam("id") int id) {
-        return ResponseEntity.ok().body(studentService.getStudentByCourseId(id));
-    }
+//    @GetMapping("/get-student-by-id-course")
+//    public ResponseEntity<?> getStudentByCourseId(@RequestParam("id") int id) {
+//        return ResponseEntity.ok().body(studentService.getStudentByCourseId(id));
+//    }
     @PostMapping("/savest")
     public ResponseEntity<?> saveStudent(@Valid @RequestBody Student student){
         return ResponseEntity.ok().body(studentService.saveStudent(student));

@@ -22,14 +22,14 @@ public class StudentService {
         return iStudentRepository.findAll();
     }
 
-    public List<Student>  getStudentByCourseId(int id){
-        Optional<Course> course= iCourseRepository.findById(id);
-        List<Student> liststudent= new ArrayList<>();
-        for (Student student: course.get().getStudentList() ) {
-            liststudent.add(student);
-        }
-        return liststudent;
-    }
+//    public List<Student>  getStudentByCourseId(int id){
+//        Optional<Course> course= iCourseRepository.findById(id);
+//        List<Student> liststudent= new ArrayList<>();
+//        for (Student student: course.get().getStudentList() ) {
+//            liststudent.add(student);
+//        }
+//        return liststudent;
+//    }
     public Student saveStudent(Student student){
 
         return iStudentRepository.save(student);
