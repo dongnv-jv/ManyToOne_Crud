@@ -22,7 +22,7 @@ public class ExceptionHandle extends ResponseEntityExceptionHandler {
                                                                   HttpStatus status,
                                                                   WebRequest request) {
         ResponseError responseError= new ResponseError();
-        responseError.addSubError(ex.getFieldErrors());
+        responseError.addSubError(ex.getBindingResult().getFieldErrors());
         responseError.setTimestamp(new Date());
         responseError.setMessage("Valid request");
         responseError.setStatus(HttpStatus.BAD_REQUEST);

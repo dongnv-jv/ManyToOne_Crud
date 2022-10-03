@@ -24,7 +24,7 @@ public class ResponseError {
             addSubError(fieldError);
         }
     }
-    public void addSubError(FieldError error) {
+    private void addSubError(FieldError error) {
         SubError subError= new SubError();
         subError.setField(error.getField());
         subError.setObject(error.getObjectName());
